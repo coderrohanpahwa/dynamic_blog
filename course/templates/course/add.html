@@ -1,0 +1,23 @@
+{% extends 'course/base.html' %}
+{% block title %}
+    Add Entry
+{% endblock title %}
+{% block body %}
+<div class="container  my-4 text-white">
+ <h1 class="text-light display-4">Add Post</h1>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {% for i in forms %}
+            {{i.label_tag}} {{i}} {{i.errors|striptags}}
+        <br><br>
+        {% endfor %}
+        <input type="Submit" value="Submit">
+    </form>
+    {% if messages %}
+        {% for i in messages %}
+            {{i}}
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock body %}

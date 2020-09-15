@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'course/css/bootstrap.css' %}">
+
+</head>
+<body class="bg-secondary">
+    {% include 'course/navbar.html' %}
+    {% block body %}
+    {% endblock body %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'course/base.html' %}
+{% block title %} Update page {% endblock title %}
+{% block body %}
+<div class="container my-4 text-white">
+     <h1 class="text-light display-4">Update Post</h1>
+    <form method="POST" class="mt-5">
+        {% csrf_token %}
+        {% for i in forms %}
+            {{i.label_tag}} {{i}}{{i.errors|striptags}}
+        {% endfor %}
+        <input value="Update" type="Submit" class="btn btn-primary my-3">
+        <a href="{% url 'dashboard' %}" class="btn btn-primary mx-2">Cancel</a>
+    </form>
+
+    {% if messages %}
+        {% for i in messages %}
+                {{i}}
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

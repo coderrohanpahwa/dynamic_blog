@@ -1,0 +1,15 @@
+{% extends 'course/base.html' %}
+{% block title %} Index {% endblock %}
+{% block body %}
+{% for post in posts%}
+<div class="container my-4">
+
+    <div class="jumbotron">
+  <h1 class="display-4">{{post.title}}</h1>
+  <p class="lead"><hr class="my-4">
+  <p>{{post.desc}}</p>
+
+</div>
+</div>
+{% endfor %}
+{% endblock %}
